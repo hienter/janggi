@@ -1,0 +1,198 @@
+/* 메뉴바 기본 스타일 */
+.menubar {
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.menubar.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.menubar.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.menubar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+}
+
+/* 로고 스타일 */
+.menubar-logo {
+  flex-shrink: 0;
+}
+
+.menubar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* 데스크톱 메뉴 아이템 */
+.menubar-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menubar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menubar.light .menubar-item {
+  color: #333333;
+}
+
+.menubar.dark .menubar-item {
+  color: #ffffff;
+}
+
+.menubar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menubar.dark .menubar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menubar-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.menubar-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.menubar-icon {
+  font-size: 16px;
+}
+
+.menubar-text {
+  white-space: nowrap;
+}
+
+/* 모바일 햄버거 메뉴 */
+.menubar-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 4px;
+}
+
+.menubar-mobile-toggle span {
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+}
+
+/* 모바일 메뉴 드롭다운 */
+.menubar-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menubar-mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  color: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menubar.dark .menubar-mobile-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.menubar-mobile-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menubar.dark .menubar-mobile-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menubar-mobile-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.menubar-mobile-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .menubar-items {
+    display: none;
+  }
+  
+  .menubar-mobile-toggle {
+    display: flex;
+  }
+  
+  .menubar-mobile-menu {
+    display: block;
+  }
+  
+  .menubar-container {
+    padding: 0 16px;
+  }
+}
+
+/* 애니메이션 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menubar-mobile-menu {
+  animation: slideDown 0.2s ease;
+}
