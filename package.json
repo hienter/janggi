@@ -1,29 +1,23 @@
 {
-  "name": "menubar-component",
-  "version": "1.0.0",
-  "description": "메뉴바 컴포넌트 프로젝트",
-  "main": "src/index.js",
+  "name": "nextjs-menubar-app",
+  "version": "0.1.0",
+  "description": "Next.js 메뉴바 앱 프로젝트",
+  "private": true,
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "next": "^14.0.0",
+    "antd": "^5.0.0",
+    "@ant-design/icons": "^5.0.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
   }
 }
